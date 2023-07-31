@@ -131,7 +131,7 @@ function handleTouchStart(event) {
   yDown = firstTouch.clientY;
 }
 
-function handleTouchMove(event) {
+async function handleTouchMove(event) {
   if (!xDown || !yDown) {
     return;
   }
@@ -152,9 +152,12 @@ function handleTouchMove(event) {
     }
 
     const celestialObjectName = celestialObjects[currentPageIndex];
-    fetchData(celestialObjectName)
-      .then((data) => renderCelestialObject(data))
-      .catch((error) => console.error('Error fetching data:', error));
+    try {
+      const data = await fetchData(celestialObjectName);
+      renderCelestialObject(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   } else {
     if (yDiff > 0) {
       // Swipe up
