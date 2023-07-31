@@ -150,6 +150,11 @@ function handleTouchMove(event) {
       // Swipe right
       currentPageIndex = (currentPageIndex - 1 + celestialObjects.length) % celestialObjects.length;
     }
+
+    const celestialObjectName = celestialObjects[currentPageIndex];
+    fetchData(celestialObjectName)
+      .then((data) => renderCelestialObject(data))
+      .catch((error) => console.error('Error fetching data:', error));
   } else {
     if (yDiff > 0) {
       // Swipe up
@@ -160,12 +165,6 @@ function handleTouchMove(event) {
 
   xDown = null;
   yDown = null;
-
-  const celestialObjectName = celestialObjects[currentPageIndex];
-
-  fetchData(celestialObjectName)
-    .then((data) => renderCelestialObject(data))
-    .catch((error) => console.error('Error fetching data:', error));
 }
 
 export { currentPageIndex };
