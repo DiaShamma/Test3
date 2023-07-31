@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starry App</title>
+  <link rel="icon" href="https://drive.google.com/uc?export=view&id=1NdD09nlqO2gtA5nbJ5vBSzbXksQG9g7_" type="png" style="width: 1000px;">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="starry-background">
+    <!-- Your content goes here -->
+  
+  <div class="welcome-container">
+    <!-- Welcome page content will be appended here -->
+  </div>
+
+  <!-- Updated structure for celestial object content and images containers -->
+  <div class="container"  >
+    <div class="celestial-object-content">
+      <!-- Celestial object content will be appended here -->
+    </div>
+    <div class="images-container">
+      <!-- Images and captions will be appended here -->
+    </div>
+  </div>
+
+  <!-- Add the following search input and results container -->
+  <div class="search-container" style="display: none;">
+    <input type="text" id="searchInput" placeholder="Enter search term">
+    <button id="searchButton">Search</button>
+  </div>
+  <div id="results" class="results-container" style="display: none;"></div>
+
+  </div>
+
+  <script type="module" src="app.js"></script>
+  <script type="module" src="search.js"></script> <!-- Add this script for the search functionality -->
+</body>
+</html>

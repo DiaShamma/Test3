@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(
+    to right,
+    #000000,
+    #000000,
+    #000000,
+    #000000,
+    #000000,
+    #080103,
+    #100206,
+    #15030a,
+    #1e0512,
+    #250818,
+    #2c081f,
+    #330727
+  );
+}
+
+.starry-background {
+  position: static;
+  width: 100vw;
+  height: 100vh;
+
+  background: url(https://drive.google.com/uc?export=view&id=1rt6e5ytWpZ9sFWFJHfMzo7EgK6Dw0dm6)
+    no-repeat;
+  background-position: center;
+  background-size: 10em;
+  animation: zoom-stars 5s infinite linear;
+}
+
+@keyframes zoom-stars {
+  from {
+    background-size: 200em;
+  }
+  to {
+    background-size: 20em;
+  }
+}
+
+h1 {
+  color: aliceblue;
+  font-size: 10px;
+  margin-top: 10px;
+}
+
+p {
+  color: aliceblue;
+  font-size: px;
+  margin: 5px 0;
+}
+
+/* Styles for the welcome container */
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.welcome-content h1 {
+  margin-top: 0.2em;
+  font-size: 3em;
+}
+
+.welcomCards {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 1em;
+}
+
+.imagCard {
+  width: 35vw;
+  height: 88vh;
+  margin-right: 4em;
+  box-shadow: 0 0 20px #ffffff;
+}
+
+.ParaCard {
+  width: 35vw;
+  height: 88vh;
+  margin-left: 1em;
+  background-color: #000000;
+  box-shadow: 0 0 20px #ffffff;
+  text-align: center;
+  padding: 10px;
+}
+
+#welcomHeader {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.ParaCard p {
+  margin: 15px 0;
+  line-height: 1.67;
+  font-size: 1.38em;
+  text-align: start;
+}
+
+.welcome-content img {
+  width: 100%;
+  height: 100%;
+}
+/* Styles for celestial object content */
+.celestial-object-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Styles for object information container */
+
+.object-info-container {
+  max-height: 43.7em;
+  max-width: 24em;
+  margin-top: 0.9em;
+  /* box-shadow: 0 0 20px #ffffff; */
+  border: 1px solid #ffffff;
+  background-color: #000000;
+}
+
+.object-info-container p {
+  text-align: start;
+  padding-left: 0.3em;
+  font-size: 1.22em;
+  line-height: 0.86;
+  overflow: hidden;
+}
+
+/* Styles for images container */
+
+.images-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 0.9em;
+}
+
+/* Styles for image cards */
+.image-card {
+  height: 20.4em;
+  width: 25em;
+  overflow: hidden;
+  border: 1px solid #ffffff;
+}
+
+.image-card img {
+  height: 20.4em;
+  width: 25em;
+}
+
+/* Styles for the search container and search results */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: #fff;
+  z-index: 3;
+}
+
+#searchInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#searchButton {
+  padding: 12px 23px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 1s ease;
+}
+
+#searchButton:hover {
+  color: #fff;
+  background-color: #2c081f;
+  border: 1px solid #fff;
+}
+
+#results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #222;
+}
+
+/* Styles for search result cards */
+.search-result-card {
+  width: 48%;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.search-result-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.no-results-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #ff0000; /* You can choose the color you prefer */
+  margin-top: 20px;
+}
+
+/* For screens with a maximum width of 768px */
+@media screen and (max-width: 768px) {
+  .welcomCards {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .imagCard,
+  .ParaCard {
+    width: 100%;
+    height: auto;
+    margin: 1em 0;
+  }
+}
+
+/* For screens with a maximum width of 1024px */
+@media screen and (max-width: 1024px) {
+  .celestial-object-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .object-info-container,
+  .images-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .object-info-container {
+    max-height: none;
+  }
+
+  .object-info-container p,
+  .image-card img {
+    font-size: 1em;
+  }
+}
+
+/* For screens with a maximum width of 600px */
+@media screen and (max-width: 600px) {
+  .welcome-content h1 {
+    font-size: 2em;
+  }
+
+  .ParaCard p {
+    font-size: 1em;
+  }
+
+  .object-info-container p {
+    font-size: 1em;
+  }
+
+  .search-container,
+  #results {
+    padding: 10px;
+  }
+
+  .search-result-card {
+    width: 100%;
+  }
+
+  #searchInput {
+    max-width: none;
+  }
+}
